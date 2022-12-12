@@ -22,22 +22,21 @@ class _applicationState extends State<application> {
         margin: EdgeInsets.all(20),
         child: Column(
           children: [
-            const Text("User Settings"),
             Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   color: Colors.blueAccent,
-                  borderRadius: const BorderRadius.all(
+                  borderRadius: BorderRadius.all(
                     Radius.circular(
                       16.0,
                     ),
                   ),
                 ),
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               child: Column(
                 children: [
                   Container(
                     
-                    margin: EdgeInsets.only(bottom: 10),
+                    margin: const EdgeInsets.only(bottom: 15),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                     children: [
@@ -84,62 +83,71 @@ class _applicationState extends State<application> {
                     children: [
                       Column(
                         children:  [
-                          Text("846", style:
-              const TextStyle(
-                fontWeight: FontWeight.w400, 
-                color: Colors.white,
-                fontSize: 17,
-              ),),
-                          Text("Collect",style: GoogleFonts.poppins(
-            fontWeight: FontWeight.w200,
-            color: Colors.white70,
-            fontSize: 10,
-          ), )
+                          const Text("846", style:
+                            TextStyle(
+                              fontWeight: FontWeight.w400, 
+                              color: Colors.white,
+                              fontSize: 17,
+                            ),
+                          ),
+                          Text("Collect",
+                            style: GoogleFonts.poppins(
+                            fontWeight: FontWeight.w200,
+                            color: Colors.white70,
+                            fontSize: 10,
+                            ), 
+                          )
                         ],
                       ),
                       Column(
                         children:  [
-                          Text("846", style:
-              const TextStyle(
-                fontWeight: FontWeight.w400, 
-                color: Colors.white,
-                fontSize: 17,
-              ),),
-                          Text("Collect",style: GoogleFonts.poppins(
-            fontWeight: FontWeight.w200,
-            color: Colors.white70,
-            fontSize: 10,
-          ), )
+                          const Text("51", style:
+                            TextStyle(
+                              fontWeight: FontWeight.w400, 
+                              color: Colors.white,
+                              fontSize: 17,
+                            ),
+                          ),
+                          Text("Attention",style: GoogleFonts.poppins(
+                            fontWeight: FontWeight.w200,
+                            color: Colors.white70,
+                            fontSize: 10,
+                            ), 
+                          )
                         ],
                       ),
                       Column(
                         children:  [
-                          Text("846", style:
-              const TextStyle(
-                fontWeight: FontWeight.w400, 
-                color: Colors.white,
-                fontSize: 17,
-              ),),
-                          Text("Collect",style: GoogleFonts.poppins(
-            fontWeight: FontWeight.w200,
-            color: Colors.white70,
-            fontSize: 10,
-          ),)
+                          const Text("267", style:
+                            TextStyle(
+                              fontWeight: FontWeight.w400, 
+                              color: Colors.white,
+                              fontSize: 17,
+                            ),
+                          ),
+                          Text("Track",style: GoogleFonts.poppins(
+                            fontWeight: FontWeight.w200,
+                            color: Colors.white70,
+                            fontSize: 10,
+                            ),
+                          )
                         ],
                       ),
                       Column(
                         children:  [
-                          Text("846", style:
-              const TextStyle(
-                fontWeight: FontWeight.w400, 
-                color: Colors.white,
-                fontSize: 17,
-              ),),
-                          Text("Collect",style: GoogleFonts.poppins(
-            fontWeight: FontWeight.w200,
-            color: Colors.white70,
-            fontSize: 10,
-          ), )
+                          const Text("39", style:
+                            TextStyle(
+                              fontWeight: FontWeight.w400, 
+                              color: Colors.white,
+                              fontSize: 17,
+                            ),
+                          ),
+                          Text("Coupons",style: GoogleFonts.poppins(
+                            fontWeight: FontWeight.w200,
+                            color: Colors.white70,
+                            fontSize: 10,
+                            ), 
+                          )
                         ],
                       )
                     ],
