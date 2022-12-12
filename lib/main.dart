@@ -34,7 +34,7 @@ class Jono extends StatelessWidget {
             children: [
               Container(
                 width: 600,
-                padding: const EdgeInsets.all(10),
+                padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
                   color: Colors.blueAccent,
                   borderRadius: const BorderRadius.all(
@@ -49,13 +49,14 @@ class Jono extends StatelessWidget {
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        CircleAvatar(
-                          backgroundColor: Colors.white,
-                          child: const Icon(
-                            Icons.person,
-                            color: Colors.grey,
-                          ),
+                        Container(
+                        padding: const EdgeInsets.all(13),
+                        decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.white
                         ),
+                        child: const Icon(Icons.account_circle, size: 20,),
+                      ),
                         const SizedBox(
                           width: 12.0,
                         ),
@@ -65,7 +66,7 @@ class Jono extends StatelessWidget {
                             Text(
                               "Dimas Fendriansyah",
                               style: GoogleFonts.poppins(
-                                  fontWeight: FontWeight.bold,
+                                  fontWeight: FontWeight.w500,
                                   letterSpacing: 1,
                                   color: Colors.white),
                             ),
@@ -75,9 +76,10 @@ class Jono extends StatelessWidget {
                             Text(
                               "Fullstack Developer",
                               style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.w500,
+                                fontWeight: FontWeight.w200,
                                 letterSpacing: 1,
                                 color: Colors.white70,
+                                fontSize: 11
                               ),
                             ),
                           ],
@@ -88,7 +90,7 @@ class Jono extends StatelessWidget {
                       height: 12.0,
                     ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Icon12(
                           label: "Contact",
@@ -142,7 +144,11 @@ class _Icon12State extends State<Icon12> {
         Text(
           widget.value,
           style:
-              const TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+              const TextStyle(
+                fontWeight: FontWeight.w400, 
+                color: Colors.white,
+                fontSize: 17,
+              ),
         ),
         const SizedBox(
           height: 2.0,
@@ -150,8 +156,9 @@ class _Icon12State extends State<Icon12> {
         Text(
           widget.label,
           style: GoogleFonts.poppins(
-            fontWeight: FontWeight.w500,
+            fontWeight: FontWeight.w200,
             color: Colors.white70,
+            fontSize: 10,
           ),
         )
       ],
