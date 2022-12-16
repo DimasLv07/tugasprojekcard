@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "754379498291",
+    "project_id": "newsflutter-74e00",
+    "storage_bucket": "newsflutter-74e00.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:754379498291:android:ebf35c0d7d3fe69b05d446",
+        "android_client_info": {
+          "package_name": "com.example.tugasprojekcard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "754379498291-hi8462nclebbvjthq8k1dn5h989qcv37.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tugasprojekcard",
+            "certificate_hash": "1680281c8142305a1a0ae8f27f0e883a45127ebd"
+          }
+        },
+        {
+          "client_id": "754379498291-v91mld0m91r2u21o51hph4gu7dg9e57d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAx1hGdzLIjSRB9AjaNcigiaqIAMc-T9ck"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "754379498291-v91mld0m91r2u21o51hph4gu7dg9e57d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
