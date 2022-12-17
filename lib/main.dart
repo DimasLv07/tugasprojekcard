@@ -3,6 +3,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
+import 'package:tugasprojekcard/test/test22.dart';
 import 'auth.dart';
 import 'package:intl/intl.dart';
 import 'dart:convert';
@@ -33,6 +34,7 @@ Future<void> main() async {
           apiKey: "AIzaSyAx1hGdzLIjSRB9AjaNcigiaqIAMc-T9ck",
           appId: "1:754379498291:android:ebf35c0d7d3fe69b05d446",
           messagingSenderId: "754379498291",
+          databaseURL: 'https://newsflutter-74e00-default-rtdb.firebaseio.com/',
           projectId: "newsflutter-74e00"));
   runApp(const MyApp());
 }
@@ -139,7 +141,8 @@ class _ApplicationSatuState extends State<ApplicationSatu>
   }
 
   List<String> img = [];
-
+  User? user = FirebaseAuth.instance.currentUser;
+  String? nameUser;
   String dateNow = '';
   @override
   void initState() {
@@ -152,8 +155,8 @@ class _ApplicationSatuState extends State<ApplicationSatu>
     _getData();
     _getDataC();
     super.initState();
-
-    dateNow = formattedDate;
+    nameUser = user?.displayName;
+    String dateNow = formattedDate;
   }
 
   Widget build(BuildContext context) {
@@ -216,7 +219,7 @@ class _ApplicationSatuState extends State<ApplicationSatu>
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      "Dimas Fendriansyah",
+                                      nameUser!,
                                       style: GoogleFonts.poppins(
                                           fontWeight: FontWeight.w500,
                                           letterSpacing: 1,
@@ -635,7 +638,6 @@ class _ApplicationSatuState extends State<ApplicationSatu>
                                   aspectRatio: 5.0,
                                 ),
                                 itemBuilder: (context, i, id) {
-                                  
                                   //for onTap to redirect to another screen
                                   return GestureDetector(
                                     child: Container(
@@ -647,58 +649,64 @@ class _ApplicationSatuState extends State<ApplicationSatu>
                                           )),
                                       //ClipRRect for image border radius
                                       child: ClipRRect(
-                                        borderRadius: BorderRadius.circular(15),
-                                        child: Stack(
-                                          children: [
-                                            Image.network(
-                                          (() {
-                                            if (_getCarousel.isEmpty) {
-                                              return "https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921";
-                                            } else {
-                                              return _getCarousel[i]
-                                                  ['urlToImage'];
-                                            }
-                                          }()),
-                                          width: 500,
-                                          fit: BoxFit.cover,
-                                        ),
-                                        Positioned(
-                      bottom: 0.0,
-                      left: 0.0,
-                      right: 0.0,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [
-                              Color.fromARGB(200, 0, 0, 0),
-                              Color.fromARGB(0, 0, 0, 0)
-                            ],
-                            begin: Alignment.bottomCenter,
-                            end: Alignment.topCenter,
-                          ),
-                        ),
-                        padding: EdgeInsets.symmetric(
-                            vertical: 10.0, horizontal: 20.0),
-                        child: Text(
-                          (() {
-                                            if (_getCarousel.isEmpty) {
-                                              return "" ;
-                                            } else {
-                                              return _getCarousel[i]
-                                                  ['title'];
-                                            }
-                                          }()),
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                                        )
-                                          ],
-                                        )
-                                      ),
+                                          borderRadius:
+                                              BorderRadius.circular(15),
+                                          child: Stack(
+                                            children: [
+                                              Image.network(
+                                                (() {
+                                                  if (_getCarousel.isEmpty) {
+                                                    return "https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921";
+                                                  } else {
+                                                    return _getCarousel[i]
+                                                        ['urlToImage'];
+                                                  }
+                                                }()),
+                                                width: 500,
+                                                fit: BoxFit.cover,
+                                              ),
+                                              Positioned(
+                                                bottom: 0.0,
+                                                left: 0.0,
+                                                right: 0.0,
+                                                child: Container(
+                                                  decoration: BoxDecoration(
+                                                    gradient: LinearGradient(
+                                                      colors: [
+                                                        Color.fromARGB(
+                                                            200, 0, 0, 0),
+                                                        Color.fromARGB(
+                                                            0, 0, 0, 0)
+                                                      ],
+                                                      begin: Alignment
+                                                          .bottomCenter,
+                                                      end: Alignment.topCenter,
+                                                    ),
+                                                  ),
+                                                  padding: EdgeInsets.symmetric(
+                                                      vertical: 10.0,
+                                                      horizontal: 20.0),
+                                                  child: Text(
+                                                    (() {
+                                                      if (_getCarousel
+                                                          .isEmpty) {
+                                                        return "";
+                                                      } else {
+                                                        return _getCarousel[i]
+                                                            ['title'];
+                                                      }
+                                                    }()),
+                                                    style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontSize: 20.0,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                    ),
+                                                  ),
+                                                ),
+                                              )
+                                            ],
+                                          )),
                                     ),
                                     onTap: () {
                                       var url = _getCarousel[i]['urlToImage'];
